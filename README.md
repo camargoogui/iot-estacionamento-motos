@@ -72,14 +72,14 @@ git clone https://github.com/camargoogui/iot-estacionamento-motos
 
 ## Prints
 
-**Circuito no Wokwi:**
+## Circuito no Wokwi:
 <img src="./img/circuito-wokwi.png" alt="Circuito Wokwi" width="300"/>
 
-**Fluxo Node-RED:**
+## Fluxo Node-RED:
 <img src="./img/fluxo-node-red.png" alt="Fluxo Node-RED" width="300"/>
 
-**Dashboard Node-RED:**
-<img src="./img/dashboard.png" alt="Dashboard Node-RED" width="700"/>
+## Dashboard Node-RED:
+<img src="./img/dashboard.png" alt="Dashboard Node-RED" width="800"/>
 
 ## Vídeo
 
