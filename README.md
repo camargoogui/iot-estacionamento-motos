@@ -49,7 +49,14 @@ git clone https://github.com/camargoogui/iot-estacionamento-motos
   - TRIG (amarelo) → GPIO 5 do ESP32
   - ECHO (verde) → GPIO 18 do ESP32
 
+**Circuito no Wokwi:**
 <img src="./img/circuito-wokwi.png" alt="Circuito Wokwi" width="300"/>
+
+**Fluxo Node-RED:**
+<img src="./img/fluxo-node-red.png" alt="Fluxo Node-RED" width="300"/>
+
+**Dashboard Node-RED:**
+<img src="./img/dashboard.png" alt="Dashboard Node-RED" width="500"/>
 
 ### 4. Configure o Node-RED e o Dashboard
 - **Instale o Node-RED Dashboard:**
