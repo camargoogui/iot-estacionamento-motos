@@ -36,7 +36,7 @@ O sistema utiliza um ESP32 simulado no Wokwi, equipado com um sensor ultrassôni
 
 ### 1. Clone este repositório
 ```sh
-git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+git clone https://github.com/camargoogui/iot-estacionamento-motos
 ```
 
 ### 2. Abra no VSCode e compile com PlatformIO
@@ -49,7 +49,7 @@ git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
   - TRIG (amarelo) → GPIO 5 do ESP32
   - ECHO (verde) → GPIO 18 do ESP32
 
-![Circuito Wokwi](coloque_o_link_da_imagem_aqui)
+![Circuito Wokwi](./img/circuito-wokwi.png)
 
 ### 4. Configure o Node-RED e o Dashboard
 - **Instale o Node-RED Dashboard:**
