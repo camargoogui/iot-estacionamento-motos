@@ -44,10 +44,20 @@ git clone https://github.com/camargoogui/iot-estacionamento-motos
 ### 3. Simule no Wokwi
 - Importe o código para o Wokwi.
 - Monte o circuito conforme a imagem abaixo:
-  - VCC (vermelho) → 3V3 do ESP32
-  - GND (preto) → GND do ESP32
-  - TRIG (amarelo) → GPIO 5 do ESP32
-  - ECHO (verde) → GPIO 18 do ESP32
+
+<img src="./img/circuito-wokwi.png" alt="Circuito Wokwi" width="300"/>
+
+**Componentes utilizados:**
+- **ESP32:** Microcontrolador com Wi-Fi integrado, ideal para projetos IoT.
+- **Sensor Ultrassônico HC-SR04:** Mede a distância até um objeto usando pulsos de ultrassom, permitindo detectar a presença de uma moto na vaga.
+
+**Conexões:**
+- **VCC (vermelho):** Alimentação 3V3 do ESP32 para o HC-SR04.
+- **GND (preto):** Terra do ESP32 para o HC-SR04.
+- **TRIG (amarelo):** GPIO 5 do ESP32 para o pino TRIG do HC-SR04 (envia o pulso).
+- **ECHO (verde):** GPIO 18 do ESP32 para o pino ECHO do HC-SR04 (recebe o pulso refletido).
+
+O ESP32 envia um pulso pelo pino TRIG, o HC-SR04 responde com um pulso no pino ECHO proporcional à distância do objeto à frente do sensor. O código interpreta esse tempo para calcular a distância e publica o resultado via MQTT.
 
 ### 4. Configure o Node-RED e o Dashboard
 - **Instale o Node-RED Dashboard:**
@@ -72,11 +82,8 @@ git clone https://github.com/camargoogui/iot-estacionamento-motos
 
 ## Prints
 
-## Circuito no Wokwi:
-<img src="./img/circuito-wokwi.png" alt="Circuito Wokwi" width="300"/>
-
 ## Fluxo Node-RED:
-<img src="./img/fluxo-node-red.png" alt="Fluxo Node-RED" width="300"/>
+<img src="./img/fluxo-node-red.png" alt="Fluxo Node-RED" width="500"/>
 
 ## Dashboard Node-RED:
 <img src="./img/dashboard.png" alt="Dashboard Node-RED" width="800"/>
