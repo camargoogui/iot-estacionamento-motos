@@ -43,7 +43,7 @@ git clone https://github.com/camargoogui/iot-estacionamento-motos
 
 ### 3. Simule no Wokwi
 - Importe o código para o Wokwi.
-- Monte o circuito conforme a imagem abaixo:
+- Importe o código `diagram.json` disponível no repositório diretamente no Wokwi para montar o circuito automaticamente, ou siga a imagem abaixo para montar manualmente:
 
 <img src="./img/circuito-wokwi.png" alt="Circuito Wokwi" width="300"/>
 
@@ -58,6 +58,13 @@ git clone https://github.com/camargoogui/iot-estacionamento-motos
 - **ECHO (verde):** GPIO 18 do ESP32 para o pino ECHO do HC-SR04 (recebe o pulso refletido).
 
 O ESP32 envia um pulso pelo pino TRIG, o HC-SR04 responde com um pulso no pino ECHO proporcional à distância do objeto à frente do sensor. O código interpreta esse tempo para calcular a distância e publica o resultado via MQTT.
+
+**Atenção:**
+- No Wokwi, é necessário instalar a biblioteca PubSubClient nas Project Libraries do projeto para que a simulação funcione corretamente.
+- Como instalar:
+1. No Wokwi, clique em Libraries (ícone de livro na barra lateral).
+2. Pesquise por PubSubClient.
+3. Clique em Install ao lado da biblioteca oficial.
 
 ### 4. Configure o Node-RED e o Dashboard
 - **Instale o Node-RED Dashboard:**
