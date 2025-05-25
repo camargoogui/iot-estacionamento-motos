@@ -96,6 +96,9 @@ node-red
 ## Dashboard Node-RED:
 <img src="./img/dashboard.png" alt="Dashboard Node-RED" width="800"/>
 
+## Dashboard e Wokwi em Tempo Real Atualizando:
+<img src="./img/dash-wokiw-temporeal.png" alt="Dashboard Node-RED" width="900"/>
+
 ## Vídeo
 
 [Link para o vídeo no YouTube (não listado)](https://youtu.be/DDRDllUFeqA?si=YxhqVT8EaGnbJM8L)
