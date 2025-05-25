@@ -98,4 +98,4 @@ node-red
 
 ## Vídeo
 
-[Link para o vídeo no YouTube (não listado)](COLE_O_LINK_AQUI)
+[Link para o vídeo no YouTube (não listado)](https://youtu.be/DDRDllUFeqA?si=YxhqVT8EaGnbJM8L)
