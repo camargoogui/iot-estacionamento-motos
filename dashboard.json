@@ -1,40 +1,59 @@
 [
     {
+        "id": "4f07eea542836687",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "mqtt_distancia",
         "type": "mqtt in",
-        "z": "flow1",
+        "z": "4f07eea542836687",
         "name": "Distancia",
         "topic": "fiap/iot/vaga/distancia",
         "qos": "0",
         "datatype": "auto",
-        "broker": "broker_hivemq",
+        "broker": "282d9ad7cbde6313",
         "nl": false,
         "rap": true,
         "rh": 0,
-        "x": 120,
+        "inputs": 0,
+        "x": 170,
         "y": 100,
-        "wires": [["gauge_distancia", "chart_distancia"]]
+        "wires": [
+            [
+                "gauge_distancia",
+                "chart_distancia"
+            ]
+        ]
     },
     {
         "id": "mqtt_status",
         "type": "mqtt in",
-        "z": "flow1",
+        "z": "4f07eea542836687",
         "name": "Status",
         "topic": "fiap/iot/vaga/status",
         "qos": "0",
         "datatype": "auto",
-        "broker": "broker_hivemq",
+        "broker": "282d9ad7cbde6313",
         "nl": false,
         "rap": true,
         "rh": 0,
-        "x": 120,
+        "inputs": 0,
+        "x": 170,
         "y": 200,
-        "wires": [["text_status"]]
+        "wires": [
+            [
+                "text_status"
+            ]
+        ]
     },
     {
         "id": "gauge_distancia",
         "type": "ui_gauge",
-        "z": "flow1",
+        "z": "4f07eea542836687",
         "name": "",
         "group": "dashboard_group",
         "order": 1,
@@ -46,18 +65,23 @@
         "format": "{{value}}",
         "min": 0,
         "max": 400,
-        "colors": ["#00ff00", "#ffff00", "#ff0000"],
+        "colors": [
+            "#00ff00",
+            "#ffff00",
+            "#ff0000"
+        ],
         "seg1": 20,
         "seg2": 100,
+        "diff": false,
         "className": "",
-        "x": 350,
+        "x": 400,
         "y": 100,
         "wires": []
     },
     {
         "id": "chart_distancia",
         "type": "ui_chart",
-        "z": "flow1",
+        "z": "4f07eea542836687",
         "name": "",
         "group": "dashboard_group",
         "order": 2,
@@ -77,16 +101,31 @@
         "removeOlderUnit": "3600",
         "cutout": 0,
         "useOneColor": false,
-        "colors": ["#1f77b4", "#aec7e8", "#ff7f0e"],
-        "useOldStyle": false,
-        "x": 350,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 400,
         "y": 160,
-        "wires": [[]]
+        "wires": [
+            []
+        ]
     },
     {
         "id": "text_status",
         "type": "ui_text",
-        "z": "flow1",
+        "z": "4f07eea542836687",
         "group": "dashboard_group",
         "order": 3,
         "width": 0,
@@ -95,29 +134,45 @@
         "label": "Status da Vaga",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 350,
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 400,
         "y": 200,
         "wires": []
     },
     {
-        "id": "broker_hivemq",
+        "id": "282d9ad7cbde6313",
         "type": "mqtt-broker",
-        "name": "broker.hivemq.com",
+        "name": "",
         "broker": "broker.hivemq.com",
         "port": "1883",
         "clientid": "",
+        "autoConnect": true,
         "usetls": false,
-        "compatmode": false,
+        "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
+        "autoUnsubscribe": true,
         "birthTopic": "",
         "birthQos": "0",
+        "birthRetain": "false",
         "birthPayload": "",
+        "birthMsg": {},
         "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
         "closePayload": "",
+        "closeMsg": {},
         "willTopic": "",
         "willQos": "0",
-        "willPayload": ""
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
     },
     {
         "id": "dashboard_group",
@@ -127,7 +182,8 @@
         "order": 1,
         "disp": true,
         "width": "6",
-        "collapse": false
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "dashboard_tab",
@@ -138,4 +194,4 @@
         "disabled": false,
         "hidden": false
     }
-] 
+]
