@@ -29,6 +29,13 @@ O sistema utiliza um ESP32 simulado no Wokwi, equipado com um sensor ultrassôni
 - Node.js e Node-RED instalados
 - Broker MQTT público (ex: HiveMQ)
 
+## 👥 Integrantes
+
+- RM556270 - Bianca Vitoria - 2TDSPZ
+- RM555166 - Guilherme Camargo - 2TDSPM
+- RM555131 - Icaro Americo - 2TDSPM
+
+
 ## Instalação e Execução
 
 ### 1. Simule no Wokwi
