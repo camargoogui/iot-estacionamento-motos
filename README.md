@@ -212,7 +212,7 @@ node-red
 <img src="./img/fluxo-node-red.png" alt="Fluxo Node-RED" width="600"/>
 
 #### 3. Dashboard em Funcionamento
-<img src="./img/dashboard.png" alt="Dashboard Node-RED" width="800"/>
+<img src="./img/dashboard.png" alt="Dashboard Node-RED" width="400"/>
 
 #### 4. Monitor Serial com Logs
 <img src="./img/monitor-serial.png" alt="Monitor Serial" width="600"/>
@@ -223,37 +223,6 @@ node-red
 #### 6. Log csv
 <img src="./img/log.png" alt="Log persistente CSV" width="900"/>
 
-### 📋 Como Tirar Prints Importantes
-
-#### Para Documentar o Projeto:
-
-1. **Print do Circuito Wokwi:**
-   - Execute a simulação no Wokwi
-   - Use `Ctrl+Shift+P` → "Take Screenshot" ou ferramenta de captura do navegador
-   - Salve como `circuito-wokwi.png`
-
-2. **Print do Dashboard Node-RED:**
-   - Acesse [http://localhost:1880/ui](http://localhost:1880/ui)
-   - Aguarde dados chegarem do ESP32
-   - Capture a tela completa do dashboard
-   - Salve como `dashboard.png`
-
-3. **Print do Monitor Serial:**
-   - No VSCode: `pio device monitor`
-   - No Wokwi: Serial Monitor
-   - Capture logs de conexão e dados
-   - Salve como `monitor-serial.png`
-
-4. **Print do Fluxo Node-RED:**
-   - Acesse [http://localhost:1880](http://localhost:1880)
-   - Capture o fluxo completo
-   - Salve como `fluxo-node-red.png`
-
-5. **Print do Sistema Funcionando:**
-   - Abra dashboard e Wokwi lado a lado
-   - Movimente objeto no Wokwi
-   - Capture ambos atualizando simultaneamente
-   - Salve como `dash-wokwi-temporeal.png`
 
 ### 🎯 Funcionalidades Demonstradas
 
@@ -267,7 +236,7 @@ node-red
 
 ## 🎥 Vídeo Demonstrativo
 
-[Link para o vídeo no YouTube](https://youtu.be/DDRDllUFeqA?si=YxhqVT8EaGnbJM8L)
+[Link para o vídeo no YouTube](https://youtu.be/VzQj3f8BhOQ)
 
 ## 📝 Logs e Dados
 
@@ -283,23 +252,3 @@ Exemplo de log:
 2024-01-15T10:30:05.000Z,distancia,15
 2024-01-15T10:30:05.000Z,status,ocupada
 ```
-
-## 🔧 Troubleshooting
-
-### Problemas Comuns:
-
-1. **ESP32 não conecta ao Wi-Fi:**
-   - Verifique credenciais no código
-   - Confirme se a rede está disponível
-
-2. **MQTT não conecta:**
-   - Verifique conexão com internet
-   - Teste broker alternativo
-
-3. **Dashboard não atualiza:**
-   - Confirme se Node-RED está rodando
-   - Verifique se fluxo foi importado corretamente
-
-4. **Sensor não detecta:**
-   - Verifique conexões no circuito
-   - Teste com objetos em diferentes distâncias
