@@ -8,6 +8,17 @@ Em estacionamentos de motos, é comum a dificuldade de identificar rapidamente v
 
 O sistema utiliza um ESP32 equipado com sensor ultrassônico (HC-SR04) e LEDs indicadores para detectar e comunicar o status da vaga. Os dados são enviados via MQTT para um dashboard Node-RED que exibe informações em tempo real, histórico e logs para análise.
 
+## 🎥 Vídeo Demonstrativo
+
+[Link para o vídeo no YouTube](https://youtu.be/VzQj3f8BhOQ)
+
+
+## 👥 Integrantes
+
+- **RM556270** - Bianca Vitoria - 2TDSPZ
+- **RM555166** - Guilherme Camargo - 2TDSPM  
+- **RM555131** - Icaro Americo - 2TDSPM
+
 ## ⚡ Funcionalidades Principais
 
 - **🔗 Conexão Wi-Fi**: Conecta automaticamente à rede Wi-Fi
@@ -85,12 +96,6 @@ O sistema implementa uma lógica inteligente que considera diferentes cenários 
 - Conta no **Wokwi**
 - **Node.js** e **Node-RED** instalados
 - Broker MQTT público (ex: HiveMQ)
-
-## 👥 Integrantes
-
-- **RM556270** - Bianca Vitoria - 2TDSPZ
-- **RM555166** - Guilherme Camargo - 2TDSPM  
-- **RM555131** - Icaro Americo - 2TDSPM
 
 ## 🚀 Instruções de Uso
 
@@ -233,10 +238,6 @@ node-red
 - ✅ **Dashboard Responsivo**: Interface web atualizando
 - ✅ **Logging Automático**: Dados salvos em CSV
 - ✅ **Lógica Inteligente**: Diferentes status de ocupação
-
-## 🎥 Vídeo Demonstrativo
-
-[Link para o vídeo no YouTube](https://youtu.be/VzQj3f8BhOQ)
 
 ## 📝 Logs e Dados
 
