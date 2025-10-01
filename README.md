@@ -104,8 +104,8 @@ O sistema implementa uma lógica inteligente que considera diferentes cenários 
 #### 1. Configuração do Ambiente
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/iot-estacionamento-motos-7.git
-cd iot-estacionamento-motos-7
+git clone https://github.com/seu-usuario/iot-estacionamento-motos.git
+cd iot-estacionamento-motos
 
 # Abra no VSCode
 code .
