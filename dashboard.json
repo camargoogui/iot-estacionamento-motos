@@ -22,7 +22,7 @@
     "x": 120,
     "y": 100,
     "wires": [
-      ["gauge_distancia", "chart_distancia", "formata_log"]
+      ["gauge_distancia", "chart_distancia", "formata_log", "combina_dados"]
     ]
   },
   {
@@ -40,9 +40,7 @@
     "inputs": 0,
     "x": 120,
     "y": 160,
-    "wires": [
-      ["text_status", "formata_log"]
-    ]
+    "wires": [["text_status", "formata_log", "combina_dados"]]
   },
   {
     "id": "gauge_distancia",
@@ -59,7 +57,7 @@
     "format": "{{value}}",
     "min": 0,
     "max": 400,
-    "colors": [ "#00ff00", "#ffff00", "#ff0000" ],
+    "colors": ["#00ff00", "#ffff00", "#ff0000"],
     "seg1": 20,
     "seg2": 100,
     "diff": false,
@@ -92,7 +90,7 @@
     "cutout": 0,
     "useOneColor": false,
     "useUTC": false,
-    "colors": [ "#1f77b4", "#aec7e8", "#ff7f0e" ],
+    "colors": ["#1f77b4", "#aec7e8", "#ff7f0e"],
     "outputs": 1,
     "useDifferentColor": false,
     "className": "",
@@ -134,9 +132,7 @@
     "libs": [],
     "x": 600,
     "y": 140,
-    "wires": [
-      ["grava_csv"]
-    ]
+    "wires": [["grava_csv"]]
   },
   {
     "id": "grava_csv",
@@ -150,6 +146,65 @@
     "encoding": "none",
     "x": 800,
     "y": 140,
+    "wires": []
+  },
+  {
+    "id": "combina_dados",
+    "type": "function",
+    "z": "4f07eea542836687",
+    "name": "Combina Dados",
+    "func": "// Usa contexto global para armazenar dados temporários\nconst contextKey = 'sensor_data';\nlet context = flow.get(contextKey) || {};\n\n// Identifica o tipo de dado recebido e armazena\nif (msg.topic.includes('distancia')) {\n    context.distancia = parseFloat(msg.payload) || 0;\n    context.timestamp = new Date().toISOString();\n} else if (msg.topic.includes('status')) {\n    context.status = msg.payload.toString().trim();\n    context.timestamp = new Date().toISOString();\n}\n\n// Salva no contexto\nflow.set(contextKey, context);\n\n// Verifica se temos ambos os dados\nif (context.distancia !== undefined && context.status !== undefined) {\n    // Prepara mensagem combinada\n    const combined = {\n        distancia: context.distancia,\n        status: context.status,\n        timestamp: context.timestamp,\n        id_vaga: flow.get('id_vaga') || 1\n    };\n    \n    // Limpa o contexto após usar\n    flow.set(contextKey, {});\n    \n    msg.payload = combined;\n    return msg;\n}\n\n// Se não temos ambos ainda, não retorna nada\nreturn null;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 350,
+    "y": 300,
+    "wires": [["prepara_mongodb"]]
+  },
+  {
+    "id": "prepara_mongodb",
+    "type": "function",
+    "z": "4f07eea542836687",
+    "name": "Prepara MongoDB",
+    "func": "// Prepara documento para inserção no MongoDB\nconst data = msg.payload;\n\n// Cria documento MongoDB\nmsg.payload = {\n    vaga_id: data.id_vaga || 1,\n    distancia: data.distancia,\n    status: data.status,\n    timestamp: new Date(data.timestamp)\n};\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 580,
+    "y": 300,
+    "wires": [["mongodb_insert"]]
+  },
+  {
+    "id": "mongodb_insert",
+    "type": "mongodb4",
+    "z": "4f07eea542836687",
+    "name": "MongoDB",
+    "server": "",
+    "operation": "insertOne",
+    "collection": "historico_sensor",
+    "namex": "",
+    "index": "",
+    "x": 800,
+    "y": 300,
+    "wires": [["mongodb_status"]]
+  },
+  {
+    "id": "mongodb_status",
+    "type": "debug",
+    "z": "4f07eea542836687",
+    "name": "MongoDB Status",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "x": 1000,
+    "y": 300,
     "wires": []
   },
   {
