@@ -10,7 +10,7 @@ O sistema utiliza um ESP32 equipado com sensor ultrassônico (HC-SR04) e LEDs in
 
 ## 🎥 Vídeo Demonstrativo
 
-[Link para o vídeo no YouTube](https://youtu.be/VzQj3f8BhOQ)
+[Link para o vídeo no YouTube](https://youtu.be/SXnMnrYUehs)
 
 ## 👥 Integrantes
 
@@ -453,3 +453,4 @@ Para persistir dados em banco de dados:
 
 - **`infra/mongo/Mottu_MongoDB.js`**: Script de inicialização do MongoDB com exemplos de consultas
 - **`infra/oracle/`**: Scripts SQL para banco de dados Oracle (opcional)
+
